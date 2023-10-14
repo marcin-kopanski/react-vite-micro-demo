@@ -1,25 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
+import { useSharedContext } from "react-vite-shared-library";
 
 export const MicroDemo = () => {
+  const context = useSharedContext();
   return (
     <>
-      <div>Hello From Micro Frontend!!! test test</div>
-      <div>
-        <ul>
-          <li>
-            <Link to={"/"}>Home</Link>
-          </li>
-          <li>
-            <Link to={"sub-1"}>Subpage 1</Link>
-          </li>
-          <li>
-            <Link to={"sub-2"}>Subpage 2</Link>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <Outlet />
-      </div>
+      <div>Micro Demo</div>
+      <div>{context?.user}</div>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { MainLayout } from "src/layouts/MainLayout";
 import { MicroDemo } from "src/pages/micro-demo/MicroDemo";
 
 const MicroDemoRoutes = () => {
@@ -9,11 +10,11 @@ const MicroDemoRoutes = () => {
         [
           {
             path: "/",
-            element: <MicroDemo />,
+            element: <MainLayout />,
             children: [
               {
                 index: true,
-                element: <>Home</>,
+                element: <MicroDemo />,
               },
               { path: "sub-1", element: <>Subpage 1</> },
               { path: "sub-2", element: <>Subpage 2</> },

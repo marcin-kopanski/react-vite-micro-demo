@@ -8,6 +8,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import { SessionContextProvider } from "src/contexts/SessionContext";
 
 const queryClient = new QueryClient();
 
@@ -28,7 +29,7 @@ export const App: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {children}
+      <SessionContextProvider>{children}</SessionContextProvider>
 
       <ReactQueryDevtools initialIsOpen />
       {showDevtools && (
