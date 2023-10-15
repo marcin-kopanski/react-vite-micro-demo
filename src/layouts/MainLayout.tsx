@@ -1,5 +1,4 @@
 import { Link, Outlet } from "react-router-dom";
-import { useSessionContext } from "src/hooks/useSessionContext";
 
 export const MainLayout = () => {
   // const { user } = useSessionContext();
@@ -9,6 +8,9 @@ export const MainLayout = () => {
       <div>Hello From Micro Frontend!!!</div>
       <div>
         <ul>
+          <li>
+            <Link to={"../"}>Back</Link>
+          </li>
           <li>
             <Link to={"/"}>Home</Link>
           </li>

@@ -1,12 +1,20 @@
-import { Link, Outlet } from "react-router-dom";
-import { useSharedContext } from "react-vite-shared-library";
+import { useContext } from "react";
+import { SharedContext } from "react-vite-shared-library";
 
 export const MicroDemo = () => {
-  const context = useSharedContext();
+  const context = useContext(SharedContext);
+
   return (
     <>
-      <div>Micro Demo</div>
-      <div>{context?.user}</div>
+      <div className="asdca">Micro Demo</div>
+      <div>{context?.user.name}</div>
+      <button
+        onClick={() =>
+          context?.setUser({ ...context?.user, name: "Marcin change" })
+        }
+      >
+        Click
+      </button>
     </>
   );
 };

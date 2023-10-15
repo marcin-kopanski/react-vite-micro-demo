@@ -1,5 +1,5 @@
-import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
+import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
@@ -14,7 +14,7 @@ export default defineConfig({
       exposes: {
         "./Routes": "./src/components/MicroDemoRoutes",
       },
-      shared: ["react"],
+      shared: ["react", "react-vite-shared-library"],
     }),
   ],
   server: {
