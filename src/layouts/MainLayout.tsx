@@ -1,11 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
+import { useSharedContext } from "react-vite-shared-library";
 
 export const MainLayout = () => {
-  // const { user } = useSessionContext();
+  const { state } = useSharedContext();
 
   return (
     <>
-      <div>Hello From Micro Frontend!!!</div>
+      <div>Hello {state?.user.name} From Micro Frontend!!!</div>
       <div>
         <ul>
           <li>

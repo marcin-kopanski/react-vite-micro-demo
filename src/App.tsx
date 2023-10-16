@@ -2,13 +2,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import {
   FC,
-  lazy,
   PropsWithChildren,
   Suspense,
+  lazy,
   useEffect,
   useState,
 } from "react";
-import { SessionContextProvider } from "src/contexts/SessionContext";
+import { SharedContextProvider } from "react-vite-shared-library";
 
 const queryClient = new QueryClient();
 
@@ -29,7 +29,7 @@ export const App: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SessionContextProvider>{children}</SessionContextProvider>
+      <SharedContextProvider>{children}</SharedContextProvider>
 
       <ReactQueryDevtools initialIsOpen />
       {showDevtools && (

@@ -2,19 +2,21 @@ import { useContext } from "react";
 import { SharedContext } from "react-vite-shared-library";
 
 export const MicroDemo = () => {
-  const context = useContext(SharedContext);
+  const { state } = useContext(SharedContext);
 
   return (
-    <>
-      <div className="asdca">Micro Demo</div>
-      <div>{context?.user.name}</div>
-      <button
-        onClick={() =>
-          context?.setUser({ ...context?.user, name: "Marcin change" })
-        }
-      >
-        Click
-      </button>
-    </>
+    state != undefined ?? (
+      <>
+        <div className="asdca">Micro Demo</div>
+        <div>{state?.user.name}</div>
+        <button
+          onClick={() =>
+            state?.setUser({ ...state?.user, name: "Marcin change" })
+          }
+        >
+          Click
+        </button>
+      </>
+    )
   );
 };
